@@ -1,0 +1,27 @@
+package lab2;
+
+public class SecondSmallest {
+	public static int getSecondSmallest(int[] array, int total) {
+		int temp;
+		for( int i=0; i<total; i++) 
+		{
+			for(int j=i+1; j<total; j++) 
+			{
+				if(array[i] > array[j]) 
+				{
+					temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}
+		}
+		return array[1];
+	}
+	public static void main(String[] args) {
+		//
+		int array[] = {29, 33, 17, 93, 67};
+		System.out.println("Second Smallest number in given numbers :"+getSecondSmallest(array, 5));
+
+	}
+
+}
